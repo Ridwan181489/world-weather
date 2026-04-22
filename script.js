@@ -38,21 +38,21 @@ function fetchWeather(city) {
     weatherDiv.innerHTML = "Loading...";
     footer.innerHTML = "";
 
-    const API_KEY = "YOUR_API_KEY";
-
     fetch(`/api/weather?city=${encodeURIComponent(city)}`)
         .then(res => res.json())
         .then(data => {
 
-            if (data.cod !== 200) {
-                weatherDiv.innerHTML = `<p style="color:red">❌ ${data.message}</p>`;
+            // ✅ correct error check
+            if (data.error) {
+                weatherDiv.innerHTML = `<p style="color:red">❌ ${data.error}</p>`;
                 return;
             }
 
+            // ✅ correct data use
             weatherDiv.innerHTML = `
-        <h3>${data.name}, ${getCountryName(data.sys.country)}</h3>
-        <div class="temp">${Math.round(data.main.temp)}°C</div>
-        <div class="feels">Feels like ${Math.round(data.main.feels_like)}°C</div>
+        <h3>${data.city}, ${getCountryName(data.country)}</h3>
+        <div class="temp">${Math.round(data.temp)}°C</div>
+        <div class="feels">Feels like ${Math.round(data.feels_like)}°C</div>
       `;
 
             footer.innerHTML = `
