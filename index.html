@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Worldwide Weather</title>
+  <link rel="icon" type="image/png" href="Files/favicon.png">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="card">
+
+    <!-- Website Title-->
+    <h2 class="website-title">World Weather</h2>
+
+    <!-- TIME -->
+    <div class="time-box">
+      <div id="time" class="time">00:00</div>
+      <div id="date" class="date"></div>
+    </div>
+
+    <!-- SEARCH -->
+    <div class="search-box">
+      <input type="text" id="cityInput" placeholder="Enter Country or City Name">
+    </div>
+
+    <!-- WEATHER -->
+    <div id="weather"></div>
+
+    <button class="bd-btn" onclick="goToBD()">
+      View Bangladesh Weather
+    </button>
+
+
+    <!-- FOOTER -->
+    <div class="footer" id="footer"></div>
+
+  </div>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
